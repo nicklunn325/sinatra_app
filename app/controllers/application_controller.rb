@@ -10,29 +10,28 @@ class ApplicationController < Sinatra::Base
         erb :'genres/index'
     end
     
-        #* Get new genre form
-        get '/genres/new' do
-            erb :'genres/new'
-        end
-    
-    #* Get genre show page
-    get '/genres/:id' do
-        "show page"
+    #* Get new genre form
+    get '/genres/new' do
+        erb :'genres/new'
     end
     
     #* Create new genre from form
     post '/genres' do
         Genre.create(params)
         redirect to '/genres'
-
+    end
+    
+    #* Get genre show page
+    get '/genres/:id' do
+        "show page"
+    end
+    
+    #* Get edit genre form
+    get '/genres/:id/edit' do
     end
 
     #* Update Genre
     patch '/genres/:id' do
-    end
-
-    #* Get edit genre form
-    get '/genres/:id/edit' do
     end
 
     #* delete genre
