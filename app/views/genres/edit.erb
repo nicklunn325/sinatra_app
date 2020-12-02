@@ -1,0 +1,10 @@
+<h1>Edit <%= @genre.name %></h1>
+
+<form method="POST" action="/genres/<%= @genre.id %>">
+    <input type="hidden" name="_method" value="PATCH">
+    <label>Name</label>
+        <input type="text" name="genre[name]" value=<%= @genre.name %> />
+    </label>
+    <input type="submit" value="Edit Genre">
+</form>
+

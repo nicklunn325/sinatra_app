@@ -1,0 +1,23 @@
+<h1>Genre Show Page</h1>
+
+<h2><%= @genre.name %></h2>
+
+    <ol>
+        <% @genre.movies.each do |movie|%>
+                <li><%= movie.title %></li>
+        <%end%>
+    </ol>
+
+<form method="GET" action="/genres" >
+    <input type="submit" value="View all Genres">
+</form>
+
+<form method="GET" action="/genres/<%=@genre.id%>/edit" >
+    <input type="submit" value="Edit Genre">
+</form>
+
+<form method="POST" action="/genres/<%=@genre.id%>" >
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete Genre">
+</form>
+
