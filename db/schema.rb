@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_01_045546) do
+ActiveRecord::Schema.define(version: 2020_12_02_025400) do
 
   create_table "genres", force: :cascade do |t|
     t.string "name"
+  end
+
+  create_table "movies", force: :cascade do |t|
+    t.string "title"
+    t.integer "year"
+    t.string "director"
+    t.integer "genre_id"
+    t.index ["genre_id"], name: "index_movies_on_genre_id"
   end
 
 end
