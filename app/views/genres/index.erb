@@ -1,4 +1,7 @@
 <h1>Movie Genres</h1>
+<% if logged_in?  %>
+   <h2>You are logged in</h2>
+<% end %>
 <ul>
 <% @genres.each do |genre| %>
     <li><a href="/genres/<%= genre.id %>"><%= genre.name %></a></li>

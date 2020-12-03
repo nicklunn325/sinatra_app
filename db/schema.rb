@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_02_025400) do
+ActiveRecord::Schema.define(version: 2020_12_03_140749) do
 
   create_table "genres", force: :cascade do |t|
     t.string "name"
@@ -22,6 +22,12 @@ ActiveRecord::Schema.define(version: 2020_12_02_025400) do
     t.string "director"
     t.integer "genre_id"
     t.index ["genre_id"], name: "index_movies_on_genre_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "username"
+    t.string "password_digest"
   end
 
 end
