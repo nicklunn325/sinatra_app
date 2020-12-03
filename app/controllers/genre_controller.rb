@@ -8,7 +8,12 @@ class GenreController < ApplicationController
     
     #* Get new genre form
     get '/genres/new' do
-        erb :'genres/new'
+        if logged_in?
+            erb :'genres/new'
+        else
+            @error = "You must be logged in to create a new genre"
+            erb :'sessions/new'
+        end
     end
     
     #* Create new genre from form

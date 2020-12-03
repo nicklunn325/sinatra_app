@@ -10,6 +10,7 @@ class UserController < ApplicationController
         if user.save
             session[:user_id] = user.id
 
+
             redirect to '/genres'
         else
             @error = user.errors.full_messages.join(" - ")
