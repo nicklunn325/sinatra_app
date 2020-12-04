@@ -15,5 +15,5 @@ ActiveRecord::Base.establish_connection(
 )
 
 configure :development do
-    set :database, 'sqlite3:db/development.db'
-  end
+    set :database, 'sqlite3:db/development.sqlite'
+end
